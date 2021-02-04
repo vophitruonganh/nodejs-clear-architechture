@@ -1,0 +1,56 @@
+{
+  "name": "cleanarc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ./",
+    "start": "nodemon src/app.js",
+    "test": "mocha --require babel-register tests/**/*.js --exit"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "app-root-path": "^2.1.0",
+    "body-parser": "^1.18.3",
+    "elasticsearch": "^15.4.1",
+    "express": "^4.16.4",
+    "joi": "^14.3.1",
+    "module-alias": "^2.2.2",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.11.13",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.9",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "mocha": "^8.2.1"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 4000
+    }
+  },
+  "_moduleAliases": {
+    "@root": "./src",
+    "@frameworks": "src/frameworks",
+    "@application": "src/application",
+    "@config": "src/config",
+    "@controllers": "src/controllers",
+    "@entities": "src/entities",
+    "@backgroundJob": "src/frameworks/background-job",
+    "@api": "src/frameworks/web",
+    "@persistance": "src/frameworks/persistance"
+  }
+}
